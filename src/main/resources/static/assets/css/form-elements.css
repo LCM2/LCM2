@@ -9,7 +9,8 @@ textarea.form-control {
     vertical-align: middle;
     background: #f8f8f8;
     border: 3px solid #ddd;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'ROKABold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
     font-size: 16px;
     font-weight: 300;
     line-height: 50px;
@@ -54,7 +55,8 @@ button.btn {
     vertical-align: middle;
     background: #19b9e7;
     border: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'ROKABold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
     font-size: 16px;
     font-weight: 300;
     line-height: 50px;
