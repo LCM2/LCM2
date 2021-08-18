@@ -7,34 +7,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
-	  @GetMapping("/chart")
-	  public String chart(Model model){
-	        model.addAttribute("data","chart!!");
-	        return "chart";
-	  }
-	  @GetMapping("/empty")
-	  public String empty(Model model){
-	        model.addAttribute("data","empty!!");
-	        return "empty";
-	  }
-	  @GetMapping("/form")
-	  public String form(Model model){
-	        model.addAttribute("data","form!!");
-	        return "form";
-	  }
-	  @GetMapping("/index")
-	  public String index(Model model){
-	        model.addAttribute("data","index!!");
-	        return "index";
-	  }
-	  @GetMapping("/table")
-	  public String table(Model model){
-	        model.addAttribute("data","table!!");
-	        return "table";
-	  }
-	  @GetMapping("/login")
-	  public String login(Model model){
-		  model.addAttribute("data","login!!");
-		  return "login";
-	  }
+	@GetMapping("/chart")
+	public String chart(Model model) {
+		return "chart";
+	}
+
+	@GetMapping("/empty")
+	public String empty(Model model) {
+		return "empty";
+	}
+
+	@GetMapping("/form")
+	public String form(Model model) {
+		return "form";
+	}
+
+	@GetMapping("/index")
+	public String index(Model model) {
+		return "index";
+	}
+
+	@GetMapping("/table")
+	public String table(Model model) {
+		return "table";
+	}
+
 }
