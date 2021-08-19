@@ -31,5 +31,10 @@ public class TestController {
 	public String table(Model model) {
 		return "table";
 	}
+	
+	@GetMapping("/teamList")
+	public String teamList(Model model) {
+		return "teamList";
+	}
 
 }
