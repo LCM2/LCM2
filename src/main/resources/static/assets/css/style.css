@@ -1,7 +1,7 @@
 body {
     font-family: 'ROKABold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 300;
     color: #888;
     line-height: 30px;
@@ -92,6 +92,9 @@ img { max-width: 100%; }
 .form-box {
 	margin-top: 70px;
 }
+.form-box-none {
+	margin-top: 0px;
+}
 
 .form-top {
 	overflow: hidden;
@@ -99,6 +102,13 @@ img { max-width: 100%; }
 	background: #fff;
 	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 	text-align: left;
+}
+
+.form-top-center {
+	overflow: hidden;
+	padding: 32px 22px 10px 28px;
+	background: #fff;
+	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 }
 
 .form-top-left {
@@ -121,9 +131,16 @@ img { max-width: 100%; }
 
 .form-bottom {
 	padding: 25px 25px 30px 25px;
-	background: #eee;
+	background: #fff;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
+}
+.form-bottom-border {
+	padding: 25px 25px 30px 25px;
+	background: #fff;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: left;
+	border-bottom: 1px solid #9e9e9e;
 }
 
 .form-bottom form textarea {

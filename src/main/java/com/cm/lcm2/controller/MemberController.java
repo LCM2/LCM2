@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/member")
 public class MemberController {
 
-	@GetMapping("/findId")
-	public String findId(Model model) {
-		return "member/findId";
-	}
-	
 	@GetMapping("/recoveryPassword")
 	public String recoveryPassword(Model model) {
 		return "member/recoveryPassword";

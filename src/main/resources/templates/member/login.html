@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,70 +31,74 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 </head>
+
 <body>
 	<!-- Top content -->
 	<div class="top-content">
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8 col-sm-offset-2 text">
-						<h1><strong>LCM</strong></h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-5">
-						<div class="form-box">
-							<div class="form-top">
-								<h5>이메일 로그인</h5>
+					<div class="col-sm-0">
+						<div class="form-box-none">
+							<div class="form-top-center">
+								<h1>LCM</h1>
 							</div>
-							<div class="form-bottom">
-								<form role="form" action="" method="post" class="login-form">
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="email" type="email" class="validate">
-											<label for="email">이메일 주소</label>
-										</div>
+							<div class="form-bottom-border">
+								<div class="row">
+									<div class="input-field col s12">
+										<h3>간편 로그인</h1>
 									</div>
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="password" type="password" class="validate">
-											<label for="password">비밀번호</label>
-										</div>
-									</div>
-									<div class="row">
-										<button type="submit" class="btn">이메일 계정 로그인</button>
-									</div>
-									<div class="text-center">
-										<a href="/member/find_id/" class="btn btn-light-theme">아이디 찾기</a>
-										<a href="/member/recovery_password/" class="btn btn-light-theme">비밀번호 찾기</a>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-1 middle-border"></div>
-					<div class="col-sm-1"></div>
-					<div class="col-sm-5">
-						<div class="form-box">
-							<div class="form-top">
-								<h5>소셜계정으로 로그인</h5>
-							</div>
-							<div class="form-bottom">
-								<div class="social-login-buttons" style="display: flex;">
-									<a class="btn btn-link-1 btn-link-1-facebook col s6" href="#">
-										<i class="fa fa-facebook"></i> Facebook
-									</a>
-									<a class="btn btn-link-1 btn-link-1-twitter col s6" href="#">
-										<i class="fa fa-twitter"></i> Twitter
-									</a>
 								</div>
-								<div class="social-login-buttons" style="display: flex;">
-									<a class="btn btn-link-1 btn-link-1-google-plus col s6" href="#">
-										<i class="fa fa-google-plus"></i> Google
-									</a>
-									<a class="btn btn-link-1 btn-link-1-apple col s6" href="#">
-										<i class="fa fa-apple"></i> Apple
-									</a>
+								<div class="row">
+									<div class="social-login-buttons" style="display: flex;">
+										<a class="btn btn-link-1 btn-link-1-facebook col s12 btn-large" href="#">
+											<i class="fa fa-facebook"></i> Facebook
+										</a>
+									</div>
+									<div class="social-login-buttons" style="display: flex;">
+										<a class="btn btn-link-1 btn-link-1-twitter col s12 btn-large" href="#">
+											<i class="fa fa-twitter"></i> Twitter
+										</a>
+									</div>
+									<div class="social-login-buttons" style="display: flex;">
+										<a class="btn btn-link-1 btn-link-1-google-plus col s12 btn-large" href="#">
+											<i class="fa fa-google-plus"></i> Google
+										</a>
+									</div>
+									<div class="social-login-buttons" style="display: flex;">
+										<a class="btn btn-link-1 btn-link-1-apple col s12 btn-large" href="#">
+											<i class="fa fa-apple"></i> Apple
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="form-bottom">
+								<div class="row">
+									<div class="input-field col s12">
+										<h3>이메일 로그인</h1>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="email" type="email" class="validate">
+										<label for="email">이메일 주소</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="password" type="password" class="validate">
+										<label for="password">비밀번호</label>
+									</div>
+								</div>
+								<p>
+									<input type="checkbox" id="indeterminate-checkbox">
+									<label for="indeterminate-checkbox">로그인 유지</label>
+									<a href="/member/recoveryPassword" style="float: right;">비밀번호를 잊으셨나요</a>
+								</p>
+								<div class="row">
+									<div class="social-login-buttons" style="display: flex;">
+										<button type="submit" class="btn btn-large col s12">이메일 계정 로그인</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -110,7 +115,7 @@
 
 				<div class="col-sm-8 col-sm-offset-2">
 					<div class="footer-border"></div>
-					<p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a></p>
+					<p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">LCM</a></p>
 				</div>
 
 			</div>
@@ -134,17 +139,12 @@
 	<script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
 	<script src="../assets/js/morris/morris.js"></script>
 
-
 	<script src="../assets/js/easypiechart.js"></script>
 	<script src="../assets/js/easypiechart-data.js"></script>
-
 	<script src="../assets/js/Lightweight-Chart/jquery.chart.js"></script>
 
 	<!-- Custom Js -->
 	<script src="../assets/js/custom-scripts.js"></script>
-	<!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
 
 </body>
 
