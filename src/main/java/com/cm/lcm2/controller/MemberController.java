@@ -25,4 +25,13 @@ public class MemberController {
 		return "member/agree";
 	}
 	
+	@GetMapping("/signUp")
+	public String signUp(Model model) {
+		return "member/signUp";
+	}
+	@GetMapping("/sendEmail")
+	public String sendEmail(Model model) {
+		return "member/sendEmail";
+	}
+	
 }
