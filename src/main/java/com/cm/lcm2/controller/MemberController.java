@@ -20,4 +20,9 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@GetMapping("/agree")
+	public String agree(Model model) {
+		return "member/agree";
+	}
+	
 }
