@@ -33,5 +33,9 @@ public class MemberController {
 	public String sendEmail(Model model) {
 		return "member/sendEmail";
 	}
+	@GetMapping("/signUpDone")
+	public String signUpDone(Model model) {
+		return "member/signUpDone";
+	}
 	
 }

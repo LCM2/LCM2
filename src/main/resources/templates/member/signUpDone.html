@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>로그인</title>
+	<title>회원가입완료</title>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -47,67 +48,34 @@
 							<div class="form-top-center">
 								<img src="../assets/img/LCM-namelogo-02.svg" style="width: 30%;">
 							</div>
-							<div class="form-bottom-border">
-								<div class="row">
-									<div class="input-field col s12">
-										<h3>간편 로그인</h3>
-									</div>
-								</div>
-								<div class="row">
-									<div class="social-login-buttons" style="display: flex;">
-										<a class="btn btn-link-1 btn-link-1-facebook col s12 btn-large" href="#">
-											<i class="fa fa-facebook"></i> Facebook
-										</a>
-									</div>
-									<div class="social-login-buttons" style="display: flex;">
-										<a class="btn btn-link-1 btn-link-1-twitter col s12 btn-large" href="#">
-											<i class="fa fa-twitter"></i> Twitter
-										</a>
-									</div>
-									<div class="social-login-buttons" style="display: flex;">
-										<a class="btn btn-link-1 btn-link-1-google-plus col s12 btn-large" href="#">
-											<i class="fa fa-google-plus"></i> Google
-										</a>
-									</div>
-									<div class="social-login-buttons" style="display: flex;">
-										<a class="btn btn-link-1 btn-link-1-apple col s12 btn-large" href="#">
-											<i class="fa fa-apple"></i> Apple
-										</a>
-									</div>
-								</div>
-							</div>
 							<div class="form-bottom">
 								<div class="row">
-									<div class="input-field col s12">
-										<h3>이메일 로그인</h3>
+									<div class="col" style="float: inherit;">
+										<ul class="tabs">
+											<li class="tab col s3 disabled"><a href="#">STEP 01</a></li>
+											<li class="tab col s3 disabled"><a href="#">STEP 02</a></li>
+											<li class="tab col s3 disabled"><a href="#">STEP 03</a></li>
+											<li class="tab col s3 disabled"><a class="active" href="#">STEP 04</a></li>
+											<div class="indicator" style="right: 159.781px; left: 79.2188px;"></div>
+										</ul>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="email" type="email" class="validate" autocomplete="off">
-										<label for="email">이메일 주소</label>
+										<h3>회원가입완료</h3>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="password" type="password" class="validate" autocomplete="off">
-										<label for="password">비밀번호</label>
+										LCM 회원이 되신 것을 환영합니다.
+									</div>
+									<div class="col s12">
+										다양한 서비스를 자유롭게 이용해보세요.
 									</div>
 								</div>
-								<p>
-									<input type="checkbox" id="indeterminate-checkbox">
-									<label for="indeterminate-checkbox">로그인 유지</label>
-									<a href="/member/recoveryPassword" style="float: right;">비밀번호를 잊으셨나요</a>
-								</p>
 								<div class="row">
 									<div class="social-login-buttons" style="display: flex;">
-										<button type="submit" class="btn btn-large col s12">이메일 계정 로그인</button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s12" style="text-align: center;">
-										LCM 처음이세요?
-										<a href="/member/agree">회원가입하기</a>
+										<button type="submit" class="btn btn-large col s12" onclick="location.href='/member/login';">메인으로 가기</button>
 									</div>
 								</div>
 							</div>
@@ -156,5 +124,77 @@
 	<!-- Custom Js -->
 	<script src="../assets/js/custom-scripts.js"></script>
 
+	<script type="text/javascript">
+		let emailSuccess    = false;
+		let nicknameSuccess = false;
+		let passwordSuccess = false;
+		
+		function requiredCheck() { //기본정보입력 검증 결과
+			if(emailSuccess && nicknameSuccess && passwordSuccess) document.getElementById('next').disabled = false;
+			else document.getElementById('next').disabled = ture;
+		}
+		function verifyEmail(emailVal) { // 이메일 검증 스크립트 작성 
+		
+			const emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; // 검증에 사용할 정규식 변수 regExp에 저장 
+			if (emailVal.match(emailRegExp) != null) {
+				$("#emailDanger").hide();
+				$("#emailSuccess").show();
+				emailSuccess = true;
+				return true;
+			} else {
+				$("#emailDanger").show();
+				$("#emailSuccess").hide();
+				emailSuccess = false;
+				return false;
+			}
+		}
+		function verifyNickname(nicknameVal) { // 닉네임 검증 스크립트 작성 
+		
+			if (nicknameVal.length >= 3 && nicknameVal.length <= 20) {
+				$("#nicknameDanger").hide();
+				$("#nicknameSuccess").show();
+				nicknameSuccess = true;
+				return true;
+			} else {
+				$("#nicknameDanger").show();
+				$("#nicknameSuccess").hide();
+				nicknameSuccess = false;
+				return false;
+			}
+		}
+
+		function verifyPassword(passwordVal) { // 비밀번호 검증 스크립트 작성 
+		
+			const num = passwordVal.search(/[0-9]/g);
+			const eng = passwordVal.search(/[a-z]/ig);
+			const spe = passwordVal.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+			if (passwordVal.length < 10 || passwordVal.length > 20) {
+				$("#passwordDanger").text("비밀번호 길이는 10자리 ~ 20자리 이내로 입력");
+				$("#passwordDanger").show();
+				$("#passwordSuccess").hide();
+				passwordSuccess = false;
+				return false;
+			} else if (passwordVal.search(/\s/) != -1) {
+				$("#passwordDanger").text("비밀번호는 공백 없이 입력");
+				$("#passwordDanger").show();
+				$("#passwordSuccess").hide();
+				passwordSuccess = false;
+				return false;
+			} else if ((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
+				$("#passwordDanger").text("비밀번호는 영문, 숫자, 특수문자 중 2가지 이상을 혼합하여 입력");
+				$("#passwordDanger").show();
+				$("#passwordSuccess").hide();
+				passwordSuccess = false;
+				return false;
+			} else {
+				$("#passwordDanger").hide();
+				$("#passwordSuccess").show();
+				passwordSuccess = true;
+				return true;
+			}
+		}
+	</script>
 </body>
+
 </html>
