@@ -34,4 +34,29 @@ public class ClanController {
 		return "clan/teamJoinMngmt";
 	}
 	
+	/*클랜원*/
+	@GetMapping("/clanUsr")
+	public String clanUsr(Model model) {
+		return "clan/clanUsr";
+	}
+	/*가입신청서 관리*/
+	@GetMapping("/joinApplMngmt")
+	public String joinApplMngmt(Model model) {
+		return "clan/clanUsr";
+	}
+	/*가입대기*/
+	@GetMapping("/joinWait")
+	public String joinWait(Model model) {
+		return "clan/joinWait";
+	}
+	/*수습인원*/
+	@GetMapping("/prbtnUsr")
+	public String prbtnUsr(Model model) {
+		return "clan/prbtnUsr";
+	}
+	/*탈퇴인원*/
+	@GetMapping("/reaveUsr")
+	public String reaveUsr(Model model) {
+		return "clan/reaveUsr";
+	}
 }
