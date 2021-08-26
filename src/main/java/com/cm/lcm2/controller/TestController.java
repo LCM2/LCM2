@@ -41,6 +41,7 @@ public class TestController {
 	public String teamGnrt(Model model) {
 		return "teamGnrt";
 	}
+	
 	@GetMapping("/thymeleaf")
 	public String tilesTest(Model model) {
 		return "thymeleaf";
