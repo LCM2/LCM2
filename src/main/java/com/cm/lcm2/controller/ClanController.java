@@ -19,4 +19,9 @@ public class ClanController {
 		return "clan/teamGnrt";
 	}
 	
+	@GetMapping("/myTeamMain")
+	public String myTeamMain(Model model) {
+		return "clan/myTeamMain";
+	}
+	
 }

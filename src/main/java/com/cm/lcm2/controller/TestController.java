@@ -32,16 +32,6 @@ public class TestController {
 		return "table";
 	}
 	
-	@GetMapping("/teamList")
-	public String teamList(Model model) {
-		return "teamList";
-	}
-	
-	@GetMapping("/teamGnrt")
-	public String teamGnrt(Model model) {
-		return "teamGnrt";
-	}
-	
 	@GetMapping("/thymeleaf")
 	public String tilesTest(Model model) {
 		return "thymeleaf";
