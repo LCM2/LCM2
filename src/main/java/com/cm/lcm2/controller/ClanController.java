@@ -59,4 +59,9 @@ public class ClanController {
 	public String reaveUsr(Model model) {
 		return "clan/reaveUsr";
 	}
+	/*메인*/
+	@GetMapping("/main")
+	public String main(Model model) {
+		return "clan/main";
+	}
 }
