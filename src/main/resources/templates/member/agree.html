@@ -30,10 +30,19 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-	
+
 	<style>
-		@media screen and (min-width: 601px) {.container {width: 620px;}}
-		@media screen and (min-width: 993px) {.container {width: 620px;}}
+		@media screen and (min-width: 601px) {
+			.container {
+				width: 620px;
+			}
+		}
+
+		@media screen and (min-width: 993px) {
+			.container {
+				width: 620px;
+			}
+		}
 	</style>
 </head>
 
@@ -67,7 +76,8 @@
 											동의합니다.</label>
 									</p>
 									<p>
-										<input type="checkbox" id="agree_001" name="requiredAgree" onchange="requiredCheck();">
+										<input type="checkbox" id="agree_001" name="requiredAgree"
+											onchange="requiredCheck();">
 										<label for="agree_001">LCM 이용약관 동의 (필수)</label>
 									</p>
 									<div class="row" style="display: contents;">
@@ -130,7 +140,8 @@
 										</div>
 									</div>
 									<p>
-										<input type="checkbox" id="agree_002" name="requiredAgree" onchange="requiredCheck();">
+										<input type="checkbox" id="agree_002" name="requiredAgree"
+											onchange="requiredCheck();">
 										<label for="agree_002">개인정보 수집 및 이용에 관한 동의 (필수)</label>
 									</p>
 									<div class="row" style="display: contents;">
@@ -203,8 +214,11 @@
 								</div>
 								<div class="row">
 									<div class="social-login-buttons" style="display: flex;">
-										<button type="submit" class="btn btn-large col s6" style="margin-right: 0.75rem;" onclick="location.href='/member/login';">비동의</button>
-										<button type="submit" class="btn btn-large col s6" id="next" onclick="location.href='/member/signUp';" disabled="true">동의</button>
+										<button type="submit" class="btn btn-large col s6"
+											style="margin-right: 0.75rem;"
+											onclick="location.href='/member/login';">비동의</button>
+										<button type="submit" class="btn btn-large col s6" id="next"
+											onclick="location.href='/member/signUp';" disabled="true">동의</button>
 									</div>
 								</div>
 							</div>
@@ -252,28 +266,28 @@
 
 	<!-- Custom Js -->
 	<script src="../assets/js/custom-scripts.js"></script>
-	
+
 	<script type="text/javascript">
 		// 약관 전체 체크
 		function selectAll(selectAll) {
-		  const checkboxes = document.getElementsByName('agree');
-		  const requiredCheckboxes = document.getElementsByName('requiredAgree');
-		  
-		  checkboxes.forEach((checkbox) => {
-		    checkbox.checked = selectAll.checked;
-		  });
-		  requiredCheckboxes.forEach((checkbox) => {
-		    checkbox.checked = selectAll.checked;
-		  });
-		  
-		  document.getElementById('next').disabled = !selectAll.checked;
+			const checkboxes = document.getElementsByName('agree');
+			const requiredCheckboxes = document.getElementsByName('requiredAgree');
+
+			checkboxes.forEach((checkbox) => {
+				checkbox.checked = selectAll.checked;
+			});
+			requiredCheckboxes.forEach((checkbox) => {
+				checkbox.checked = selectAll.checked;
+			});
+
+			document.getElementById('next').disabled = !selectAll.checked;
 		}
 		// 필수 약관 체크 사용 시 name = "requiredAgree" 체크
 		function requiredCheck() {
-			const checkboxes    = document.getElementsByName('requiredAgree');
+			const checkboxes = document.getElementsByName('requiredAgree');
 			let requiredCheck = true;
 			checkboxes.forEach((checkbox) => {
-				if(!checkbox.checked) requiredCheck = false;
+				if (!checkbox.checked) requiredCheck = false;
 			});
 			document.getElementById('next').disabled = !requiredCheck;
 		}

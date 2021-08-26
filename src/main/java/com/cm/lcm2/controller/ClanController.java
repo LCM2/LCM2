@@ -64,4 +64,9 @@ public class ClanController {
 	public String main(Model model) {
 		return "clan/main";
 	}
+	/*일정*/
+	@GetMapping("/calendar")
+	public String calendar(Model model) {
+		return "clan/calendar";
+	}
 }

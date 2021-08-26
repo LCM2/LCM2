@@ -1,24 +1,23 @@
-
 <!DOCTYPE html>
-<html 
-	  xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"><!-- 해당 파일이 기본 레이아웃임을 선언 -->
-    
-	<!-- 공통 스크립트-->
-    <th:block th:replace="fragments/script :: scriptFragment"></th:block>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- 해당 파일이 기본 레이아웃임을 선언 -->
 
-    
- <body>
-    <div id="wrapper">
-    
+<!-- 공통 스크립트-->
+<th:block th:replace="fragments/script :: scriptFragment"></th:block>
+
+
+<body>
+	<div id="wrapper">
+
 		<!-- 공통 헤더-->
-	    <th:block th:replace="fragments/head :: headFragment"></th:block>
-	    
-	    <!-- 사이드바-->
-	    <th:block th:replace="fragments/sidebar :: sidebarFragment"></th:block>
-		
+		<th:block th:replace="fragments/head :: headFragment"></th:block>
+
+		<!-- 사이드바-->
+		<th:block th:replace="fragments/sidebar :: sidebarFragment"></th:block>
+
 		<th:block layout:fragment="content"></th:block>
-    </div>
+	</div>
 </body>
+
 </html>
