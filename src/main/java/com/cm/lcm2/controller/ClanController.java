@@ -69,4 +69,28 @@ public class ClanController {
 	public String calendar(Model model) {
 		return "clan/calendar";
 	}
+	
+	/* 팀관리 */
+	@GetMapping("/teamMng")
+	public String teamMng(Model model) {
+		return "clan/teamMng";
+	}
+	
+	/* 리그 관리 */
+	@GetMapping("/leagueMng")
+	public String leagueMng(Model model) {
+		return "clan/leagueMng";
+	}
+	
+	/* 리그신청 관리 */
+	@GetMapping("/leagueApplMng")
+	public String leagueApplMng(Model model) {
+		return "clan/leagueApplMng";
+	}
+	
+	/* 기타 */
+	@GetMapping("/clanMngEtc")
+	public String clanMngEtc(Model model) {
+		return "clan/clanMngEtc";
+	}
 }
