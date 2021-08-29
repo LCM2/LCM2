@@ -55,9 +55,9 @@ public class ClanController {
 		return "clan/prbtnUsr";
 	}
 	/*탈퇴인원*/
-	@GetMapping("/reaveUsr")
+	@GetMapping("/leaveUsr")
 	public String reaveUsr(Model model) {
-		return "clan/reaveUsr";
+		return "clan/leaveUsr";
 	}
 	/*메인*/
 	@GetMapping("/main")
