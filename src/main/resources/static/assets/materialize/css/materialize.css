@@ -2146,8 +2146,9 @@
  *    without disabling user zoom.
  */
 html {
-  font-family: 'ROKABold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: sans-serif;
+  /*font-family: 'ROKABold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -2350,8 +2351,9 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'ROKABold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: monospace, monospace;
+  /*font-family: 'ROKABold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
   font-size: 1em;
 }
 
@@ -2733,6 +2735,7 @@ video.responsive-video {
   color: rgba(255, 255, 255, 0.7);
   vertical-align: top;
   display: inline-block;
+  font-family: 'Material Icons';
   font-family: 'ROKABold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
   font-weight: normal;
@@ -4208,32 +4211,47 @@ nav .input-field label.active {
 }
 
 @font-face {
- font-family: 'ROKABold';
- src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: "Roboto";
+  src: local(Roboto Thin), url("../fonts/roboto/Roboto-Thin.eot");
+  src: url("../fonts/roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Thin.woff2") format("woff2"), url("../fonts/roboto/Roboto-Thin.woff") format("woff"), url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
+ /*font-family: 'ROKABold';
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
  font-weight: 200;
 }
 
 @font-face {
-  font-family: 'ROKABold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: "Roboto";
+  src: local(Roboto Light), url("../fonts/roboto/Roboto-Light.eot");
+  src: url("../fonts/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+  /*font-family: 'ROKABold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'ROKABold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: "Roboto";
+  src: local(Roboto Regular), url("../fonts/roboto/Roboto-Regular.eot");
+  src: url("../fonts/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+/*  font-family: 'ROKABold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
   font-weight: 400;
 }
 
 @font-face {
- font-family: 'ROKABold';
- src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Medium.eot");
+  src: url("../fonts/roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+ /*font-family: 'ROKABold';
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
  font-weight: 500;
 }
 
 @font-face {
- font-family: 'ROKABold';
- src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Bold.eot");
+  src: url("../fonts/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
+ /*font-family: 'ROKABold';
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
  font-weight: 700;
 }
 
@@ -4243,8 +4261,9 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: 'ROKABold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');
+  font-family: "Roboto", sans-serif;
+  /*font-family: 'ROKABold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff') format('woff');*/
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }
