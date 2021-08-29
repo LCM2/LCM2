@@ -1,15 +1,23 @@
 package com.cm.lcm2.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import com.cm.lcm2.model.Login;
+import com.cm.lcm2.repositery.LoginRepositery;
 
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-
+	
+	@Autowired
+	private LoginRepositery loginRepositery;
+	
 	@GetMapping("/recoveryPassword")
 	public String recoveryPassword(Model model) {
 		return "member/recoveryPassword";
@@ -36,6 +44,10 @@ public class MemberController {
 	@GetMapping("/signUpDone")
 	public String signUpDone(Model model) {
 		return "member/signUpDone";
+	}
+	@PostMapping("/save")
+	public Login saveSignUp(@RequestBody Login s) {
+		return loginRepositery.save(s);
 	}
 	
 }

@@ -6,3 +6,13 @@ spring:
         cache: false
     thymeleaf:
         cache: false
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: ff3403209!!
+        url: jdbc:mysql://ls-54dcc89c57c67211c8b66ef1d2ffc0dff87e2d59.c7z5fqnnmwun.ap-northeast-2.rds.amazonaws.com:3306/LCM_LOCAL
+        username: dbmasteruser
+    jpa:
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        show-sql: true
+
