@@ -42,7 +42,7 @@ public class ClanController {
 	/*가입신청서 관리*/
 	@GetMapping("/joinApplMngmt")
 	public String joinApplMngmt(Model model) {
-		return "clan/clanUsr";
+		return "clan/joinApplMngmt";
 	}
 	/*가입대기*/
 	@GetMapping("/joinWait")
