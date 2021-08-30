@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cm.lcm2.model.Login;
 import com.cm.lcm2.repositery.LoginRepositery;
+import com.cm.lcm2.service.IMemberService;
 
 @Controller
 @RequestMapping("/member")
@@ -17,6 +19,9 @@ public class MemberController {
 	
 	@Autowired
 	private LoginRepositery loginRepositery;
+	
+	@Autowired
+	private IMemberService memberService;
 	
 	@GetMapping("/recoveryPassword")
 	public String recoveryPassword(Model model) {
@@ -48,6 +53,23 @@ public class MemberController {
 	@PostMapping("/save")
 	public Login saveSignUp(@RequestBody Login s) {
 		return loginRepositery.save(s);
+	}
+	@GetMapping("/sendMail")
+	public String sendMail() {
+		
+		//화면에서 받은 email
+		String sEmail = "fvor001@naver.com";
+		
+		//화면에 보내줄 인증코드
+		String sAutoCode = "";
+		try {
+			sAutoCode = memberService.sendMail(sEmail);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+//		return sAutoCode;
+		return "member/login";
 	}
 	
 }
