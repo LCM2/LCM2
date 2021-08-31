@@ -26,7 +26,7 @@ public class MemberService implements IMemberService {
 									        .append(sAutoCode)
 									        .append("</h1>")
 									        .toString());
-        sendMail.setFrom(mailSender.getUsername(), "관리자");
+        sendMail.setFrom(mailSender.getUsername(), "LCM");
         sendMail.setTo(email);
         sendMail.send();
 	    
