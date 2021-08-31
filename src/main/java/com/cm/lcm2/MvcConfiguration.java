@@ -1,15 +1,15 @@
 package com.cm.lcm2;
 
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.cm.lcm2.lcmUtils.IMailSender;
+import com.cm.lcm2.lcmUtils.MailSender;
 
 @Configuration
 public class MvcConfiguration implements WebMvcConfigurer{
@@ -21,29 +21,9 @@ public class MvcConfiguration implements WebMvcConfigurer{
 				.setCacheControl(CacheControl.maxAge(10, TimeUnit.MINUTES));
 	}
 	
-	@Bean(name="mailSender")
-	public JavaMailSender getJavaMailSender() {
-		Properties properties = new Properties(); 
-		properties.put("mail.smtp.auth", true);
-		properties.put("mail.transport.protocol", "smtp");
-		properties.put("mail.smtp.starttls.enable", true);
-		properties.put("mail.smtp.starttls.required", true);
-		properties.put("mail.debug", true);
-		
-		/*
-		 * host	/ port
-		 * smtp.gmail.com	/	587
-		 * smtp.naver.com	/	465
-		 */
-		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-		mailSender.setHost("smtp.gmail.com");
-		mailSender.setPort(587);
-		mailSender.setUsername("아이디");	
-		mailSender.setPassword("비밀번호");			
-		mailSender.setDefaultEncoding("utf-8");
-		mailSender.setJavaMailProperties(properties);
-		
-		return mailSender;
-		
+	@Bean
+	public IMailSender mailSender() {
+		return new MailSender();
 	}
+	
 }

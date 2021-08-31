@@ -3,16 +3,16 @@ package com.cm.lcm2.service;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.cm.lcm2.lcmUtils.IMailSender;
 import com.cm.lcm2.lcmUtils.MailUtils;
 
 @Service
 public class MemberService implements IMemberService {
 
 	@Autowired
-	private JavaMailSender mailSender;
+	private IMailSender mailSender;
 	
 	@Override
 	public String sendMail(String email) throws Exception {
@@ -26,6 +26,7 @@ public class MemberService implements IMemberService {
 									        .append(sAutoCode)
 									        .append("</h1>")
 									        .toString());
+        sendMail.setFrom(mailSender.getUsername(), "관리자");
         sendMail.setTo(email);
         sendMail.send();
 	    
