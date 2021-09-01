@@ -27,20 +27,20 @@ public class MemberService implements IMemberService {
 	@Override
 	public String sendMail(String sEmail) throws Exception {
 		
-		String sAutoCode = getAutoCode();
+		String sAuthCode = getAuthCode();
 
 		MailUtils sendMail = new MailUtils(mailSender);
         sendMail.setSubject("LCM 이메일 인증");
         sendMail.setText(new StringBuffer().append("<h1>[LCM 이메일 인증]</h1>")
 									        .append("<h1>인증번호 : ")
-									        .append(sAutoCode)
+									        .append(sAuthCode)
 									        .append("</h1>")
 									        .toString());
         sendMail.setFrom(mailSender.getUsername(), "LCM");
         sendMail.setTo(sEmail);
         sendMail.send();
 	    
-		return sAutoCode;
+		return sAuthCode;
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class MemberService implements IMemberService {
 	 * @Author  : SuChan Kim
 	 * @return
 	 */
-	public String getAutoCode() {
+	public String getAuthCode() {
 		
 		Random random=new Random();
 		int nAutoCode=random.nextInt(999999)+100000; //6자리 랜덤 정수를 생성
