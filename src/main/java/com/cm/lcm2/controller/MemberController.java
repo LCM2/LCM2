@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cm.lcm2.model.Login;
-import com.cm.lcm2.repositery.LoginRepositery;
+import com.cm.lcm2.repository.LoginRepository;
 import com.cm.lcm2.service.IMemberService;
 
 @Controller
@@ -18,7 +17,7 @@ import com.cm.lcm2.service.IMemberService;
 public class MemberController {
 	
 	@Autowired
-	private LoginRepositery loginRepositery;
+	private LoginRepository loginRepository;
 	
 	@Autowired
 	private IMemberService memberService;
@@ -52,7 +51,7 @@ public class MemberController {
 	}
 	@PostMapping("/save")
 	public Login saveSignUp(@RequestBody Login s) {
-		return loginRepositery.save(s);
+		return loginRepository.save(s);
 	}
 	@GetMapping("/sendMail")
 	public String sendMail() {
