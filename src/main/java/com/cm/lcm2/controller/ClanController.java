@@ -93,4 +93,59 @@ public class ClanController {
 	public String clanMngEtc(Model model) {
 		return "clan/clanMngEtc";
 	}
+	
+	/**
+	 * Desc : 클랜 > 리그
+	 * @Company : LCM
+	 * @Date    : 2021. 9. 2. 오후 10:59:28
+	 * @Author  : hobin
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/clanLeague")
+	public String clanLeague(Model model) {
+		return "clan/clanLeague";
+	}
+	
+	/**
+	 * Desc : 클랜 > 내전 > 기록
+	 * @Company : LCM
+	 * @Date    : 2021. 9. 2. 오후 10:59:28
+	 * @Author  : hobin
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/clanCwRec")
+	public String clanCw(Model model) {
+		return "clan/clanCwRec";
+	}
+	
+	
+	/**
+	 * Desc : 클랜 > 관리 > 상점로그
+	 * @Company : LCM
+	 * @Date    : 2021. 9. 2. 오후 10:59:28
+	 * @Author  : hobin
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/PmLog")
+	public String PmLog(Model model) {
+		return "clan/PmLog";
+	}
+	
+	/**
+	 * Desc : 클랜 > 관리 > 팀가입대기
+	 * @Company : LCM
+	 * @Date    : 2021. 9. 2. 오후 10:59:28
+	 * @Author  : hobin
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/teamJoinWait")
+	public String teamJoinWait(Model model) {
+		return "clan/teamJoinWait";
+	}
+	
+	
 }

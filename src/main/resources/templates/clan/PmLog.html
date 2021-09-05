@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<th:block layout:fragment="content">
+	<div id="page-wrapper">
+		<div class="header">
+			<h1 class="page-header">
+				리그
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">클랜</a></li>
+				<li class="active">리그</li>
+			</ol>
+
+		</div>
+
+		<div id="page-inner">
+
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Advanced Tables -->
+					<div class="card">
+						<div class="card-action">
+							Advanced Tables
+						</div>
+						<div class="card-content">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+									<thead>
+										<tr>
+											<th>받은 사람</th>
+											<th>부여자</th>
+											<th>가감</th>
+											<th>상점</th>
+											<th>상세</th>
+											<th>날씨</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="odd gradeX">
+											<td>강호빈</td>
+											<td>마스터</td>
+											<td>가감</td>
+											<td>100</td>
+											<td>옴뇸뇸</td>
+											<td>2021-09-02 22:00:01</td>
+										</tr>
+										<tr class="even gradeA">
+											<td>강호빈</td>
+											<td>마스터</td>
+											<td>가감</td>
+											<td>100</td>
+											<td>옴뇸뇸</td>
+											<td>2021-09-02 22:00:01</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!--End Advanced Tables -->
+				</div>
+			</div>
+
+		</div>
+
+</th:block>
+
+
+</html>
