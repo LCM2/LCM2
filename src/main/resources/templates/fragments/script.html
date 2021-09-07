@@ -50,11 +50,27 @@
 	<script>
 		$(document).ready(function () {
 			$('#dataTables-example').dataTable();
+			
+			<!-- SmartEditor2 텍스트편집기 -->
+			var oEditors = [];
+			function smartEditorIFrame() {
+				
+				nhn.husky.EZCreator.createInIFrame({
+					oAppRef : oEditors,
+					elPlaceHolder : "form-control",
+					sSkinURI : "../smarteditor2/SmartEditor2Skin.html",
+					fCreator : "createSEditor2"
+				});
+		      }
+			smartEditorIFrame();
 		});
 	</script>
 
 	<!-- Custom Js -->
 	<script src="../assets/js/custom-scripts.js"></script>
+	
+	<!-- SmartEditor2 텍스트편집기 -->
+	<script src="../smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
 </th:block>
 
 </html>

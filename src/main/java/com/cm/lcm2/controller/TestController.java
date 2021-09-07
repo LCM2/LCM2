@@ -36,4 +36,9 @@ public class TestController {
 	public String tilesTest(Model model) {
 		return "thymeleaf";
 	}
+
+	@GetMapping("/clan/smarteditor")
+	public String smarteditor(Model model) {
+		return "clan/smarteditor";
+	}
 }
