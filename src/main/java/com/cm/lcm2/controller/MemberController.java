@@ -8,16 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cm.lcm2.model.Login;
-import com.cm.lcm2.repository.LoginRepository;
+import com.cm.lcm2.model.User;
+import com.cm.lcm2.repository.UserRepository;
 import com.cm.lcm2.service.IMemberService;
 
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-	
-	@Autowired
-	private LoginRepository loginRepository;
 	
 	@Autowired
 	private IMemberService memberService;
@@ -48,10 +45,6 @@ public class MemberController {
 	@GetMapping("/signUpDone")
 	public String signUpDone(Model model) {
 		return "member/signUpDone";
-	}
-	@PostMapping("/save")
-	public Login saveSignUp(@RequestBody Login s) {
-		return loginRepository.save(s);
 	}
 	@GetMapping("/sendMail")
 	public String sendMail() {
