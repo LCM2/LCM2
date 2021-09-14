@@ -1,4 +1,6 @@
 spring:
+    main:
+      title: LCM
     devtools:
         livereload:
             enabled: true
