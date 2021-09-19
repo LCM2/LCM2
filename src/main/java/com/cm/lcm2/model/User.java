@@ -20,20 +20,20 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int USER_NO;
-	private String USER_ID;
-	private String USER_PW;
-	private String USER_EMAIL;
-	private int USER_AGE;
-	private String USER_NICK;
-	private int USER_POSITION;
-	private int USER_CLAN;
-	private int USER_CLAN_JOIN;
-	private int USER_JOIN;
-	private int USER_RIGHT;
-	private int USER_EMAIL_FLAG;
-	private int USER_TEAM;
-	private int USER_TEAM_JOIN;
+	private int userNo;
+	private String userId;
+	private String userPw;
+	private String userEmail;
+	private int userAge;
+	private String userNick;
+	private int userPosition;
+	private int userClan;
+	private int userClanJoin;
+	private int userJoin;
+	private int userRight;
+	private int userEmailFlag;
+	private int userTeam;
+	private int userTeamJoin;
 	
 	
 }

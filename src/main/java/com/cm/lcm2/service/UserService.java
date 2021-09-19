@@ -22,8 +22,8 @@ public class UserService {
 	}
 	
 	//동일한 ID 찾기 [R]
-	public List<User> read(String USER_ID) {
-		return userRepository.findByUserId(USER_ID);
+	public List<User> read(User user) {
+		return userRepository.findByUserId(user.getUserId());
 	}
 	
 	//유저 목록 조회 [R]
