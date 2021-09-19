@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cm.lcm2.model.User;
 import com.cm.lcm2.repository.UserRepository;
-import com.cm.lcm2.service.IMemberService;
+import com.cm.lcm2.service.MemberService;
 
 @Controller
 @RequestMapping("/member")
 public class MemberController {
 	
 	@Autowired
-	private IMemberService memberService;
+	private MemberService memberService;
 	
 	@GetMapping("/recoveryPassword")
 	public String recoveryPassword(Model model) {

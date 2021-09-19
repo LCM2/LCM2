@@ -8,8 +8,8 @@ import org.springframework.http.CacheControl;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.cm.lcm2.lcmUtils.IMailSender;
 import com.cm.lcm2.lcmUtils.MailSender;
+import com.cm.lcm2.lcmUtils.MailSenderImpl;
 
 @Configuration
 public class MvcConfiguration implements WebMvcConfigurer{
@@ -22,8 +22,8 @@ public class MvcConfiguration implements WebMvcConfigurer{
 	}
 	
 	@Bean
-	public IMailSender mailSender() {
-		return new MailSender();
+	public MailSender mailSender() {
+		return new MailSenderImpl();
 	}
 	
 }
