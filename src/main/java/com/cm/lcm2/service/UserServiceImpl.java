@@ -1,16 +1,21 @@
 package com.cm.lcm2.service;
 
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cm.lcm2.DAO.UserJpaDAO;
+import com.cm.lcm2.VO.UserVO;
 import com.cm.lcm2.lcmUtils.MailSender;
 import com.cm.lcm2.lcmUtils.MailUtils;
 
 @Service
-public class MemberServiceImpl implements MemberService {
-
+public class UserServiceImpl implements UserService {
+	@Autowired
+	private UserJpaDAO userJpaDAO;
+	
 	@Autowired
 	private MailSender mailSender;
 	
@@ -58,5 +63,34 @@ public class MemberServiceImpl implements MemberService {
 		//System.out.println("nAutoCode : " + nAutoCode);
 		return toString().valueOf(nAutoCode);
 	}
-
+	
+	//회원가입 [C]
+	@Override
+	public UserVO save(UserVO user) throws Exception {
+		return userJpaDAO.save(user);
+	}
+	
+	//동일한 ID 찾기 [R]
+	@Override
+	public List<UserVO> read(UserVO user) throws Exception{
+		return userJpaDAO.findByUserId(user.getUserId());
+	}
+	
+	//유저 목록 조회 [R]
+	@Override
+	public List<UserVO> readAll(String USER_ID) throws Exception{
+		return userJpaDAO.findAll();
+	}
+	
+//	//유저 비밀번호 변경 [U]
+//	public User updatePw(User user) {
+//		List<User> userInfo = userJpaDAO.findByUserId(user.getUSER_ID());
+//		
+//		if(!userInfo.isEmpty()) {
+//			return userInfo.get(0).setUSER_PW(user.getUSER_PW());
+//		}else {
+//			throw new NotFoundException("리소스를 찾을 수 없습니다.");
+//		}
+//		return userJpaDAO.findAll();
+//	}
 }

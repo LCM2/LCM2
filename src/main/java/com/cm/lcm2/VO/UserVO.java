@@ -1,4 +1,4 @@
-package com.cm.lcm2.model;
+package com.cm.lcm2.VO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="USER")
-public class User {
+public class UserVO {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
