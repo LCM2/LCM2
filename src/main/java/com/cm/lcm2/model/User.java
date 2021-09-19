@@ -8,6 +8,7 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name="USER")
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int USER_NO;
@@ -33,5 +34,6 @@ public class User {
 	private int USER_EMAIL_FLAG;
 	private int USER_TEAM;
 	private int USER_TEAM_JOIN;
+	
 	
 }
