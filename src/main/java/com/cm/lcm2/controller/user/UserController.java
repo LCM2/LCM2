@@ -1,4 +1,4 @@
-package com.cm.lcm2.controller;
+package com.cm.lcm2.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

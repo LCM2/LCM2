@@ -1,4 +1,4 @@
-package com.cm.lcm2.service;
+package com.cm.lcm2.service.user;
 
 import java.util.List;
 import java.util.Random;
@@ -6,8 +6,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cm.lcm2.DAO.UserJpaDAO;
-import com.cm.lcm2.VO.UserVO;
+import com.cm.lcm2.DAO.user.UserJpaDAO;
+import com.cm.lcm2.VO.user.UserVO;
 import com.cm.lcm2.lcmUtils.MailSender;
 import com.cm.lcm2.lcmUtils.MailUtils;
 

@@ -1,4 +1,4 @@
-package com.cm.lcm2.controller;
+package com.cm.lcm2.controller.user;
 
 import java.util.Optional;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cm.lcm2.VO.UserVO;
-import com.cm.lcm2.service.UserService;
+import com.cm.lcm2.VO.user.UserVO;
+import com.cm.lcm2.service.user.UserService;
 
 @RestController
 @RequestMapping("/api/member")

@@ -1,4 +1,4 @@
-package com.cm.lcm2.VO;
+package com.cm.lcm2.VO.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,10 +1,10 @@
-package com.cm.lcm2.DAO;
+package com.cm.lcm2.DAO.user;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cm.lcm2.VO.UserVO;
+import com.cm.lcm2.VO.user.UserVO;
 
 public interface UserJpaDAO extends JpaRepository<UserVO, Long>{
 	List<UserVO> findByUserId(String userId);									//USER_ID로 SELECT
