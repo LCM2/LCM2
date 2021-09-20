@@ -12,29 +12,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Data
+@Getter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="USER")
-public class UserVO {
+@Table(name="USER_HIST")
+public class UserHistVO {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userNo;
-	private String userId;
-	private String userPw;
-	private String userEmail;
-	private int userAge;
-	private String userNick;
-	private int userPosition;
-	private int userClan;
-	private int userClanJoin;
-	private int userJoin;
-	private int userRight;
-	private int userEmailFlag;
-	private int userTeam;
-	private int userTeamJoin;
-	
+	private int userHistNo;
+	private int userHistUserNo;
+	private String userHistUserNick;
+	private int userHistUserClan;
+	private int userHistUserRight;
+	private int userHistPoint;
+	private int userHistElo;
+	private int userHistUserDel;
+	private int userHistDelDate;
+	private int userHistJoinDate;
+	private int userHistGge;
+	private int userHistPosition;
+	private int userHistShip;
 	
 }
