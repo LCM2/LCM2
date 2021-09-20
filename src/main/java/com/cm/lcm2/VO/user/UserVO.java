@@ -18,7 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name="USER")
 public class UserVO {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userNo;
@@ -35,6 +35,6 @@ public class UserVO {
 	private int userEmailFlag;
 	private int userTeam;
 	private int userTeamJoin;
-	
-	
+
+
 }

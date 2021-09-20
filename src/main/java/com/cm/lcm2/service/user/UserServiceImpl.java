@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.cm.lcm2.DAO.user.UserJpaDAO;
@@ -15,11 +17,11 @@ import com.cm.lcm2.lcmUtils.MailUtils;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserJpaDAO userJpaDAO;
-	
+
 	@Autowired
 	private MailSender mailSender;
-	
-	
+
+
 	/**
 	 * Desc : 이메일 인증메일 발송
 	 * @Company : LCM
@@ -31,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public String sendMail(String sEmail) throws Exception {
-		
+
 		String sAuthCode = getAuthCode();
 
 		MailUtils sendMail = new MailUtils(mailSender);
@@ -44,10 +46,10 @@ public class UserServiceImpl implements UserService {
         sendMail.setFrom(mailSender.getUsername(), "LCM");
         sendMail.setTo(sEmail);
         sendMail.send();
-	    
+
 		return sAuthCode;
 	}
-	
+
 	/**
 	 * Desc : 인증번호 6자리 숫자생성
 	 * @Company : LCM
@@ -56,41 +58,54 @@ public class UserServiceImpl implements UserService {
 	 * @return
 	 */
 	public String getAuthCode() {
-		
+
 		Random random=new Random();
 		int nAutoCode=random.nextInt(999999)+100000; //6자리 랜덤 정수를 생성
-		
+
 		//System.out.println("nAutoCode : " + nAutoCode);
 		return toString().valueOf(nAutoCode);
 	}
-	
+
 	//회원가입 [C]
 	@Override
 	public UserVO save(UserVO user) throws Exception {
 		return userJpaDAO.save(user);
 	}
-	
+
 	//동일한 ID 찾기 [R]
 	@Override
-	public List<UserVO> read(UserVO user) throws Exception{
-		return userJpaDAO.findByUserId(user.getUserId());
+	public UserVO findSameId(String userId) throws Exception{
+		return userJpaDAO.findByUserId(userId);
 	}
-	
+
+//	//유저목록조회 [R]
+//	@Override
+//	public Page<UserVO> findUserList(Pageable pageabl) throws Exception{
+//		return userJpaDAO.findUserList(pageabl);
+//	}
+
+	//유저목록조회 [R]
+	@Override
+	public List<UserVO> findAll() throws Exception{
+		return userJpaDAO.findAll();
+	}
+
 	//유저 목록 조회 [R]
 	@Override
 	public List<UserVO> readAll(String USER_ID) throws Exception{
 		return userJpaDAO.findAll();
 	}
-	
-//	//유저 비밀번호 변경 [U]
-//	public User updatePw(User user) {
-//		List<User> userInfo = userJpaDAO.findByUserId(user.getUSER_ID());
-//		
-//		if(!userInfo.isEmpty()) {
-//			return userInfo.get(0).setUSER_PW(user.getUSER_PW());
-//		}else {
-//			throw new NotFoundException("리소스를 찾을 수 없습니다.");
-//		}
-//		return userJpaDAO.findAll();
+
+	//유저 정보 변경 [U]
+	@Override
+	public UserVO updateUser(UserVO user) throws Exception {
+		return userJpaDAO.save(user);
+	}
+
+//	//유저 목록 조회 [D]
+//	@Override
+//	public UserVO deleteUser(String userId) throws Exception{
+//		return userJpaDAO.deleteById(userId);
 //	}
+
 }
