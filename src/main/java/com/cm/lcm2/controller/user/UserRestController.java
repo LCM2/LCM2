@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cm.lcm2.VO.user.UserVO;
-import com.cm.lcm2.mapper.UserMapper;
 import com.cm.lcm2.service.user.UserService;
+import com.cm.lcm2.vo.user.UserVO;
 
 @RestController
 @RequestMapping("/api/user")

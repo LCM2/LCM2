@@ -6,11 +6,11 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cm.lcm2.DAO.user.UserDAO;
-import com.cm.lcm2.DAO.user.UserJpaDAO;
-import com.cm.lcm2.VO.user.UserVO;
+import com.cm.lcm2.dao.user.UserDAO;
+import com.cm.lcm2.dao.user.UserJpaDAO;
 import com.cm.lcm2.lcmUtils.MailSender;
 import com.cm.lcm2.lcmUtils.MailUtils;
+import com.cm.lcm2.vo.user.UserVO;
 
 @Service
 public class UserServiceImpl implements UserService {

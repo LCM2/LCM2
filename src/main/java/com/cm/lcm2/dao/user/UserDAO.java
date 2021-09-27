@@ -1,28 +1,25 @@
 /**
  * 
  */
-package com.cm.lcm2.mapper;
+package com.cm.lcm2.dao.user;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 
 import com.cm.lcm2.vo.user.UserVO;
 
 /**
  * <pre>
- * com.cm.lcm2.mapper
- *   |_ UserMapper.java
+ * com.cm.lcm2.DAO.user
+ *   |_ UserDAO.java
  * </pre>
  * 
  * Desc : 
  * @Company : LCM
  * @Author  : SuChan Kim
- * @Date    : 2021. 9. 27. 오후 3:50:49
+ * @Date    : 2021. 9. 27. 오후 3:47:39
  * @Version : 
  */
-@Mapper
-public interface UserMapper {
+public interface UserDAO {
 
 	List<UserVO> test() throws Exception;
 

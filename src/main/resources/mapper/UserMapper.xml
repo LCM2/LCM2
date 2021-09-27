@@ -3,7 +3,7 @@
 
 <mapper namespace="com.cm.lcm2.mapper.UserMapper">
 	
-	<select id="test" resultType="com.cm.lcm2.VO.user.UserVO">
+	<select id="test" resultType="com.cm.lcm2.vo.user.UserVO">
 		SELECT *
 		FROM USER
 		WHERE 1=1

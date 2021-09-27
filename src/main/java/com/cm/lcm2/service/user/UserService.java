@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.cm.lcm2.VO.user.UserVO;
+import com.cm.lcm2.vo.user.UserVO;
 
 public interface UserService {
 
