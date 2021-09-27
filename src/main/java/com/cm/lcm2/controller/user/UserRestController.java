@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cm.lcm2.VO.user.UserVO;
+import com.cm.lcm2.mapper.UserMapper;
 import com.cm.lcm2.service.user.UserService;
 
 @RestController
@@ -105,6 +106,14 @@ public class UserRestController {
 			userService.updateUser(userVO);
 		}else {
 			throw new NullPointerException("Not the save.");
+		}
+	}
+	
+	@GetMapping("/mybatisTest")
+	public void test() throws Exception {
+		List<UserVO> UserVOList = userService.test();
+		for(UserVO UserVO : UserVOList) {
+			System.out.println(UserVO.toString());
 		}
 	}
 }

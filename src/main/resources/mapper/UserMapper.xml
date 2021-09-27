@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cm.lcm2.mapper.UserMapper">
+	
+	<select id="test" resultType="com.cm.lcm2.VO.user.UserVO">
+		SELECT *
+		FROM USER
+		WHERE 1=1
+		AND USER_NO BETWEEN 1 AND 10
+	</select>
+
+</mapper>

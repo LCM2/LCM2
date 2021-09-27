@@ -19,4 +19,6 @@ public interface UserService {
 //	UserVO deleteUser(String userId) throws Exception;
 	UserVO updateUser(UserVO user) throws Exception;
 
+	List<UserVO> test() throws Exception;
+
 }
