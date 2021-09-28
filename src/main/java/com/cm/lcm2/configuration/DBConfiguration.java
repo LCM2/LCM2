@@ -1,4 +1,4 @@
-package com.cm.lcm2;
+package com.cm.lcm2.configuration;
 
 import java.io.IOException;
 
