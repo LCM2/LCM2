@@ -9,38 +9,32 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @MapperScan(basePackages = {"com.cm.lcm2.mapper"})
 public class DBConfiguration {
 
-	@Value("${spring.datasource.driver-class-name}")
-	private String driverClassName;
-	
-	@Value("${spring.datasource.url}")
-	private String url;
-	
-	@Value("${spring.datasource.username}")
-	private String username;
-	
-	@Value("${spring.datasource.password}")
-	private String password;
-
 	@Autowired
 	ApplicationContext applicationContext;
 	
 	@Bean
+	@ConfigurationProperties(prefix="spring.datasource.hikari")
+	public HikariConfig hikariConfig() {
+		return new HikariConfig();
+	}
+	
+	@Bean
 	public DataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(driverClassName);
-		dataSource.setUrl(url);
-		dataSource.setUsername(username);
-		dataSource.setPassword(password);
+		//HikariCP
+		DataSource dataSource = new HikariDataSource(hikariConfig());
+		System.out.println("DataSource connection : " + dataSource.toString());
 
 		return dataSource;
 	}
