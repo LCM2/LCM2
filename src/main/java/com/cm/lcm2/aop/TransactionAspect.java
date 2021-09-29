@@ -47,7 +47,7 @@ public class TransactionAspect {
 
 		RuleBasedTransactionAttribute transactionAttribute = new RuleBasedTransactionAttribute();
 		transactionAttribute.setRollbackRules(rollbackRules);
-		transactionAttribute.setName("*");
+		transactionAttribute.setName("LCM2TransactionManager");
 
 		MatchAlwaysTransactionAttributeSource attributeSource = new MatchAlwaysTransactionAttributeSource();
 		attributeSource.setTransactionAttribute(transactionAttribute);
