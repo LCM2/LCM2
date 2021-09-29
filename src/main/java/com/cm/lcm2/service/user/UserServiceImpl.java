@@ -106,6 +106,15 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<UserVO> test() throws Exception {
+//		UserVO user = new UserVO();
+//		user.setUserNo(604);
+//		user.setUserId("fvor001");
+//		user.setUserPw("a1bd1312d23002be258c9bb4642bbea77580353869a8ee8844e6940b7e0278b7");
+//		user.setUserEmail("fvor001@naver.com");
+//		user.setUserAge(1994);
+//		user.setUserNick("fvor001");
+//		userDAO.insertTest(user);
+//		userDAO.insertTest(user);
 		return userDAO.test();
 	}
 

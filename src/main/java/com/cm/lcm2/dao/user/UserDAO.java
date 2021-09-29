@@ -23,4 +23,6 @@ public interface UserDAO {
 
 	List<UserVO> test() throws Exception;
 
+	void insertTest(UserVO user) throws Exception;
+
 }

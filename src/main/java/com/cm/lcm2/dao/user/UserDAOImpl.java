@@ -34,4 +34,9 @@ public class UserDAOImpl implements UserDAO{
 		return userMapper.test();
 	}
 
+	@Override
+	public void insertTest(UserVO user) throws Exception {
+		userMapper.insertTest(user);
+	}
+
 }

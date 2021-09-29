@@ -9,5 +9,27 @@
 		WHERE 1=1
 		AND USER_NO BETWEEN 1 AND 10
 	</select>
+	
+	<insert id="insertTest" parameterType ="com.cm.lcm2.vo.user.UserVO">
+		INSERT INTO 
+			USER
+		VALUES
+			(
+			#{userNo, jdbcType=NUMERIC}
+			,#{userId, jdbcType=VARCHAR}
+			,#{userPw, jdbcType=VARCHAR}
+			,#{userEmail, jdbcType=VARCHAR}
+			,#{userAge, jdbcType=NUMERIC}
+			,#{userNick, jdbcType=VARCHAR}
+			,#{userPosition, jdbcType=NUMERIC}
+			,#{userClan, jdbcType=NUMERIC}
+			,#{userClanJoin, jdbcType=NUMERIC}
+			,#{userJoin, jdbcType=NUMERIC}
+			,#{userRight, jdbcType=NUMERIC}
+			,#{userEmailFlag, jdbcType=NUMERIC}
+			,#{userTeam, jdbcType=NUMERIC}
+			,#{userTeamJoin, jdbcType=NUMERIC}
+			)
+	</insert>
 
 </mapper>

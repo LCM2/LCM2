@@ -26,4 +26,6 @@ public interface UserMapper {
 
 	List<UserVO> test() throws Exception;
 
+	void insertTest(UserVO user) throws Exception;
+
 }
