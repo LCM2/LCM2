@@ -23,7 +23,7 @@ spring:
         connection-timeout: 30000 #Pool에서 Connection을 구할 때 대기시간, 대기시간안에 구하지 못하면 Exception
     jpa:
       database: mysql
-      database-platform: org.hibernate.dialect.MySQL5Dialect
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
       show-sql: true
       hibernate:
         ddl-auto: none
