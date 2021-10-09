@@ -111,8 +111,5 @@ public class UserRestController {
 	@GetMapping("/mybatisTest")
 	public void test() throws Exception {
 		List<UserVO> UserVOList = userService.test();
-		for(UserVO UserVO : UserVOList) {
-			System.out.println(UserVO.toString());
-		}
 	}
 }

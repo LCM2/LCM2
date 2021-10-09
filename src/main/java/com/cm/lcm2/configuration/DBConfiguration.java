@@ -36,7 +36,7 @@ public class DBConfiguration {
 	public DataSource dataSource() {
 		//HikariCP
 		DataSource dataSource = new HikariDataSource(hikariConfig());
-		System.out.println("DataSource connection : " + dataSource.toString());
+		/*System.out.println("DataSource connection : " + dataSource.toString());*/
 
 		return dataSource;
 	}
