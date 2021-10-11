@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
 
+	<!-- 로그 파일을 적재할 디렉토리 경로를 지정 -->
+	<property name="log-file-path" value="C:/study/LCM_workspace/logs"/>
+	<!-- 로그 파일을 적재할 파일 이름을 지정 -->
+	<property name="log-file-name" value="LCM2"/>
+    
 	<!-- Appenders -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
@@ -13,7 +18,29 @@
 			<Pattern>%d %5p %m%n</Pattern>
 		</encoder>
 	</appender>
-
+		
+	<!-- RollingFileAppender 정의 -->
+	<!-- 일자별로 로그 파일을 적재하되, 100MB를 초과하면 로그 파일 분할 -->
+	<!-- 최대 7일치를 보관하고 나머지는 삭제, 최대 1GB를 초과해도 나머지를 삭제 -->
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 파일경로설정 -->
+		<file>${log-file-path}/${log-file-name}.log</file>
+		
+		<!-- 정책설정 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log-file-path}/${log-file-name}_%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+			<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
+		
+		<!-- 출력 패턴 설정 -->
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>>%d %5p [%c] %m%n</pattern>
+		</encoder>
+	</appender>
+	
 	<!-- Logger -->
 	<logger name="com.cm.lcm2" level="DEBUG" appender-ref="console" />
 	<logger name="jdbc.sqltiming" level="INFO" appender-ref="console-infolog" />
@@ -21,5 +48,6 @@
 	<!-- Root Logger -->
 	<root level="off">
 		<appender-ref ref="console" />
+		<!-- <appender-ref ref="file"/> -->
 	</root>
 </configuration>
